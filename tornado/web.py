@@ -2467,7 +2467,7 @@ class URLSpec(object):
              "positional: %r" % self.regex.pattern)
         self.handler_class = handler_class
         self.kwargs = kwargs or {}
-        self.name = name
+        self.name = name if name!=None else kwargs.get('name')
         self._path, self._group_count = self._find_groups()
 
     def __repr__(self):
